@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float num1, num2, num3, promedio;
+
+    // Entrada de datos
+    cout << "Ingrese el primer número: ";
+    cin >> num1;
+    cout << "Ingrese el segundo número: ";
+    cin >> num2;
+    cout << "Ingrese el tercer número: ";
+    cin >> num3;
+
+    // Proceso: calcular el promedio
+    promedio = (num1 + num2 + num3) / 3;
+
+    // Salida de resultado
+    cout << "El promedio de los tres números es: " << promedio << endl;
+
+    return 0;
+}
+
+
+
+

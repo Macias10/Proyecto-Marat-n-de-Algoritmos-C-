@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Estudiante {
+    string nombre;
+    float calificaciones[3];
+    float promedio;
+};
+
+float calcularPromedio(float notas[], int cantidad) {
+    float suma = 0;
+    for (int i = 0; i < cantidad; i++) {
+        suma += notas[i];
+    }
+    return suma / cantidad;
+}
+
+int main() {
+    int n;
+    cout << "Ingrese el número de estudiantes: ";
+    cin >> n;
+
+    Estudiante estudiantes[n];
+
+    for (int i = 0; i < n; i++) {
+        cout << "\nEstudiante #" << i + 1 << endl;
+        cout << "Nombre: ";
+        cin.ignore(); // Limpiar buffer
+        getline(cin, estudiantes[i].nombre);
+
+        for (int j = 0; j < 3; j++) {
+            cout << "Calificación materia " << j + 1 << ": ";
+            cin >> estudiantes[i].calificaciones[j];
+        }
+
+        estudiantes[i].promedio = calcularPromedio(estudiantes[i].calificaciones, 3);
+    }
+
+    // Mostrar datos
+    cout << "\n=== Lista de Estudiantes ===\n";
+    for (int i = 0; i < n; i++) {
+        cout << "Nombre: " << estudiantes[i].nombre << endl;
+        cout << "Calificaciones: ";
+        for (int j = 0; j < 3; j++) {
+            cout << estudiantes[i].calificaciones[j] << " ";
+        }
+        cout << "\nPromedio: " << estudiantes[i].promedio << "\n\n";
+    }
+
+    // Buscar mejor promedio
+    int indiceMejor = 0;
+    for (int i = 1; i < n; i++) {
+        if (estudiantes[i].promedio > estudiantes[indiceMejor].promedio) {
+            indiceMejor = i;
+        }
+    }
+
+    cout << "🎉 El estudiante con el mejor promedio es: " << estudiantes[indiceMejor].nombre
+         << " con " << estudiantes[indiceMejor].promedio << endl;
+
+    return 0;
+}

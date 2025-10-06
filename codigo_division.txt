@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Declaración de variables
+    float num1, num2, resultado;
+
+    // Entrada de datos
+    cout << "Ingrese el primer número: ";
+    cin >> num1;
+    cout << "Ingrese el segundo número: ";
+    cin >> num2;
+
+    // Validación y proceso
+    if (num2 != 0) {
+        resultado = num1 / num2;
+        cout << "El resultado de la división es: " << resultado << endl;
+    } else {
+        cout << "Error: no se puede dividir entre cero." << endl;
+    }
+
+    return 0;
+}
+
+
+

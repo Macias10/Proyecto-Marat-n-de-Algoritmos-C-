@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N, i = 1;
+
+    // Entrada de datos
+    cout << "Ingrese un número entero positivo: ";
+    cin >> N;
+
+    // Validación
+    if (N < 1) {
+        cout << "Error: debe ingresar un número mayor o igual a 1." << endl;
+    } else {
+        // Proceso: imprimir números desde 1 hasta N
+        while (i <= N) {
+            cout << i << " ";
+            i++;
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
